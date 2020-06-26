@@ -1,4 +1,6 @@
 
 (do ((c (read-char) (read-char)))
-    ((eof-object? c) (exit 0)))
+    ((or (eof-object? c) (char=? c #\q)) 
+     (exit 0))
+    (print c))
 
